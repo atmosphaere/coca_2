@@ -1,0 +1,276 @@
+.hero {
+  padding: 105px 0 160px;
+
+  &-decor {
+    &::before {
+      top: 1186px;
+      left: 21px;
+      filter: blur(100px);
+    }
+
+    &::after {
+      top: 1934px;
+      right: 0;
+      filter: blur(80px);
+    }
+  }
+
+  &__title {
+    margin-bottom: 118px;
+    max-width: 959px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    color: var(--neutral-color-100);
+
+    @include small-tablet {
+      margin-bottom: 80px;
+      text-align: center;
+    }
+  }
+
+  &__subtitle {
+    &-wrapper {
+      @include flex-align-center-between;
+
+      & br {
+        @include small-tablet {
+          display: none;
+        }
+      }
+
+      @include small-tablet {
+        gap: 50px;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  }
+
+  &__circle {
+    @include flex-all-center;
+    position: relative;
+    border-radius: 50%;
+    width: 126px;
+    height: 126px;
+
+    &-logo {
+      svg rect {
+        fill: var(--neutral-color-100);
+      }
+    }
+
+    &-text {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      p {
+        margin: 0;
+        font-family: Roboto, sans-serif;
+        font-size: 12px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        animation: rotateText 15s linear infinite; 
+        transform-origin: center; 
+      }
+    }
+
+    &-link {
+      position: absolute;
+      inset: 0;
+    }
+
+    @keyframes rotateText {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__slider {
+    width: 1320px;
+    position: relative;
+
+    @include small-tablet {
+      width: 992px;
+    }
+
+    @include small-mobile {
+      width: 100%;
+    }
+
+    &-container {
+      overflow: hidden;
+      margin-top: 135px;
+    }
+  }
+
+  &__slide {
+    max-width: 502px;
+    max-height: 630px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    &-title {
+      margin-top: 24px;
+      font-weight: 600;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+      color: var(--neutral-color-100);
+    }
+
+    &-text {
+      display: -webkit-box;
+      overflow: hidden;
+      margin-top: 8px;
+      font-weight: 500;
+      line-height: 1.78;
+      color: var(--neutral-color-150);
+      -webkit-box-orient: vertical;
+      line-clamp: 3;
+    }
+
+    &-btn {
+      display: inline-block;
+      margin-top: 25px;
+      border-radius: 100px;
+      padding: 16px 32px;
+      font-weight: 700;
+      line-height: 1.5;
+      text-align: center;
+      color: var(--neutral-color-10);
+      background: var(--neutral-color-100);
+      transition: var(--transition);
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.about__btn--prev,
+.about__btn--next {
+  position: absolute;
+  top: 99px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 100px;
+  background-color: #fff;
+
+  transition: all 0.9s;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    path {
+      stroke: #1d1e25;
+    }
+  }
+
+  &:hover {
+    background-color: #7e8492;
+  }
+
+  &:hover svg {
+    transition-timing-function: ease-in-out;
+
+    path {
+      stroke: #fff;
+    }
+  }
+}
+
+.about__btn--prev {
+  right: 61%;
+  border-radius: 100px 0 0 100px;
+
+  @include small-tablet {
+    right: 50%;
+  }
+
+  @include mobile {
+    display: none;
+  }
+
+  svg {
+    right: 5px;
+  }
+}
+
+.about__btn--next {
+  left: 38.9%;
+  border-radius: 0 100px 100px 0;
+
+  @include small-tablet {
+    left: 50%;
+  }
+
+  @include mobile {
+    display: none;
+  }
+
+  svg {
+    left: 5px;
+  }
+}
+
+@keyframes anim {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.text-p-subtitle {
+  &::before {
+    transform: translateY(-84px);
+  }
+}
+
+.slogan {
+  &__container {
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    padding: 87px 0 85px;
+  }
+
+  &__wrapper {
+    @include flex-align-center-between;
+
+    @include tablet {
+      gap: 20px;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    max-width: 480px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    color: var(--neutral-color-100);
+  }
+
+  &__deskr {
+    max-width: 470px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--neutral-color-100);
+  }
+}

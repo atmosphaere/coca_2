@@ -1,0 +1,30 @@
+{
+  "name": "coca",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "sass": "^1.89.2",
+    "sharp": "^0.34.2",
+    "svgo": "^4.0.0",
+    "vite": "^6.3.5",
+    "vite-plugin-html-inject": "^1.1.2",
+    "vite-plugin-image-optimizer": "^1.1.9",
+    "vite-plugin-minify": "^2.1.0"
+  },
+  "dependencies": {
+    "core-js": "^3.43.0",
+    "intl-tel-input": "^25.3.1",
+    "swiper": "^11.2.8"
+  }
+}
