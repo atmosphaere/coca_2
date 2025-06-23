@@ -10,6 +10,19 @@ export default defineConfig({
   base: "/coca_2/",
   root: "./src",
   publicDir: "../public",
+  build: {
+    outDir: "../dist",
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, "src/index.html"),
+        about: path.resolve(__dirname, "src/about.html"),
+        contact: path.resolve(__dirname, "src/contact.html"),
+        pricing: path.resolve(__dirname, "src/pricing.html"),
+        blog: path.resolve(__dirname, "src/blog.html"),
+      },
+    },
+  },
   plugins: [
     injectHTML({
       injectData: {
@@ -38,17 +51,5 @@ export default defineConfig({
   optimizeDeps: {
     include: ["intl-tel-input", "intl-tel-input/build/js/utils.js"],
     exclude: [],
-  },
-  build: {
-    rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, "src/index.html"),
-        about: path.resolve(__dirname, "src/about.html"),
-        contact: path.resolve(__dirname, "src/contact.html"),
-        pricing: path.resolve(__dirname, "src/pricing.html"),
-        blog: path.resolve(__dirname, "src/blog.html"),
-        post: path.resolve(__dirname, "src/post.html"),
-      },
-    },
   },
 });
